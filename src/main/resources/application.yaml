@@ -1,0 +1,15 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/iplstatdb
+    password: dbuser
+    username: dbuser
+
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: create
+    generate-ddl: true
+server:
+  servlet:
+    context-path: /teamactivity
+  port: 8081
