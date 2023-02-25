@@ -5,6 +5,8 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.List;
+
 @Entity
 @Table(name = "participant")
 @Getter
@@ -22,8 +24,7 @@ public class Participant {
   @Column(name = "mobile")
   private String mobile;
 
-  @ManyToOne(cascade = CascadeType.ALL)
-  @JoinColumn(name = "participantid", nullable = false)
-  private Payment payment;
+  @ManyToMany(mappedBy = "participants")
+  private List<Activity> activities;
 
 }

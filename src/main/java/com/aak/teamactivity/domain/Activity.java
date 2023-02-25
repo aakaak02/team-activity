@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.List;
+
 @Entity
 @Table(name = "activity")
 @Getter
@@ -22,8 +24,11 @@ public class Activity {
   private int maxcount;
   @Column(name = "amount")
   private double amount;
-  @ManyToOne(cascade = CascadeType.ALL)
-  @JoinColumn(name = "activityid", nullable = false)
-  private Payment payment;
+  @ManyToMany
+  @JoinTable(
+      name = "activity_participant",
+      joinColumns = @JoinColumn(name = "activity_id"),
+      inverseJoinColumns = @JoinColumn(name = "participant_id"))
+  private List<Participant> participants;
 
 }
