@@ -6,10 +6,10 @@ import org.springframework.data.jpa.repository.Query;
 
 import java.util.List;
 
-public interface ActivityRepo extends JpaRepository<Activity, Long> {
+public interface ActivityRepo extends JpaRepository<Activity,Long> {
 
-/*
-  @Query("select t.name from activity t")
+
+  @Query("select t.name from Activity t")
   public List<String> geActivityNames();
-*/
+
 }

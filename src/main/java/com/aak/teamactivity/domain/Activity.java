@@ -7,11 +7,10 @@ import lombok.Setter;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.List;
-
-@Entity
-@Table(name = "activity")
 @Getter
 @Setter
+@Entity
+@Table(name = "activity")
 public class Activity {
 
   @Id
