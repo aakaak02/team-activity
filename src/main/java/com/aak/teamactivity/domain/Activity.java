@@ -6,13 +6,13 @@ import lombok.Setter;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.util.ArrayList;
 import java.util.List;
 @Getter
 @Setter
 @Entity
 @Table(name = "activity")
 public class Activity {
-
   @Id
   @Column(name = "id")
   @GeneratedValue(strategy = GenerationType.AUTO)
@@ -30,6 +30,10 @@ public class Activity {
       name = "activity_participant",
       joinColumns = @JoinColumn(name = "activity_id"),
       inverseJoinColumns = @JoinColumn(name = "participant_id"))
-  private List<Participant> participants;
+  private List<Participant> participants=new ArrayList<>();
+
+  public void addParticipants(Participant participant){
+      this.participants.add(participant);
+  }
 
 }
