@@ -1,6 +1,5 @@
 package com.aak.teamactivity.domain;
 
-import com.aak.teamactivity.domain.Payment;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -23,7 +22,6 @@ public class Participant {
   private String email;
   @Column(name = "mobile")
   private String mobile;
-
   @ManyToMany(mappedBy = "participants")
   private List<Activity> activities;
 

@@ -8,7 +8,6 @@ public class TeamActivityApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(TeamActivityApplication.class, args);
-		System.out.println("Initial run");
 	}
 
 }
