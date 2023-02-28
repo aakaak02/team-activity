@@ -9,7 +9,7 @@ import java.util.List;
 public interface ActivityRepo extends JpaRepository<Activity,Long> {
 
 
-  @Query("select t.name from Activity t")
-  public List<String> geActivityNames();
+  @Query("select t.title from Activity t")
+  public List<String> getActivityNames();
 
 }

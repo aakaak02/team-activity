@@ -15,11 +15,11 @@ import java.util.List;
 public class TeamActivityController {
 
     private final TeamActivityService teamActivityService;
-/*
+
     @GetMapping("/activity-names")
     public ResponseEntity<List<String>> geActivityNames(){
       List<String> activityNames = teamActivityService.geActivityNames();
       return ResponseEntity.ok(activityNames);
     }
-*/
+
 }

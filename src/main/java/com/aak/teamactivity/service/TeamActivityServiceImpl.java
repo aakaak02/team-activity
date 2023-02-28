@@ -12,12 +12,12 @@ import java.util.List;
 public class TeamActivityServiceImpl implements TeamActivityService {
 
   private final ActivityRepo activityRepo;
-/*
+
   @Override
   public List<String> geActivityNames() {
-    List<String> list = activityRepo.geActivityNames();
+    List<String> list = activityRepo.getActivityNames();
     log.info("Team count is :{}",list.size());
     return list;
   }
-*/
+
 }
