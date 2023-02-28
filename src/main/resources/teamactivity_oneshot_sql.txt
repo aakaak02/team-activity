@@ -1,0 +1,97 @@
+insert into activity (title, club_name, activity_type, date, start_time, end_time, max_count, amount) values ('Cricket Activity1', 'RCB', 1, '2022-07-01', '15:51', '6:55', 6, 100);
+insert into activity (title, club_name, activity_type, date, start_time, end_time, max_count, amount) values ('Badminton Activity1', 'HYD', 0, '2023-01-19', '23:03', '19:33', 2, 200);
+insert into activity (title, club_name, activity_type, date, start_time, end_time, max_count, amount) values ('Cricket Activity2', 'RCB', 1, '2022-06-16', '8:12', '7:59', 6, 100);
+insert into activity (title, club_name, activity_type, date, start_time, end_time, max_count, amount) values ('Cricket Activity3', 'MIC', 1, '2022-06-22', '6:51', '22:59', 6, 100);
+insert into activity (title, club_name, activity_type, date, start_time, end_time, max_count, amount) values ('FB Activity1', 'RFB', 2, '2022-08-28', '22:57', '4:03', 10, 50);
+insert into activity (title, club_name, activity_type, date, start_time, end_time, max_count, amount) values ('FB Activity2', 'RFB', 2, '2023-03-15', '20:11', '3:21', 10, 50);
+insert into activity (title, club_name, activity_type, date, start_time, end_time, max_count, amount) values ('Cricket Activity4', 'RCB', 1, '2022-08-05', '20:00', '18:06', 6, 100);
+insert into activity (title, club_name, activity_type, date, start_time, end_time, max_count, amount) values ('FB Activity3', 'HYDFB', 2, '2022-08-26', '20:30', '11:41', 10, 50);
+insert into activity (title, club_name, activity_type, date, start_time, end_time, max_count, amount) values ('FB Activity4', 'HYDFB', 2, '2022-12-04', '23:54', '22:07', 10, 50);
+insert into activity (title, club_name, activity_type, date, start_time, end_time, max_count, amount) values ('Badminton Activity2', 'HYD', 0, '2022-11-07', '13:43', '13:34', 2, 200);
+
+-- participant
+
+insert into participant (email, mobile, name) values ('ashok@email.com', '5936736350', 'Ashok');
+insert into participant (email, mobile, name) values ('satya@email.com', '2455889009', 'Satya');
+insert into participant (email, mobile, name) values ('mouli@email.com', '2790525994', 'Mouli');
+insert into participant (email, mobile, name) values ('sri@email.com', '9798781813', 'Sri');
+insert into participant (email, mobile, name) values ('kohli@email.com', '1860416574', 'Kohli');
+insert into participant (email, mobile, name) values ('gopi@email.com', '5443490079', 'Gopi');
+insert into participant (email, mobile, name) values ('ronaldo@email.com', '8151153008', 'Ronaldo');
+insert into participant (email, mobile, name) values ('sam@email.com', '9846835388', 'Sam');
+insert into participant (email, mobile, name) values ('ram@email.com', '5580143494', 'Ram');
+insert into participant (email, mobile, name) values ('rohit@email.com', '6644684610', 'Rohit');
+
+--activity_participant
+
+insert into activity_participant (activity_id, participant_id) values (1, 1);
+insert into activity_participant (activity_id, participant_id) values (1, 51);
+insert into activity_participant (activity_id, participant_id) values (1, 151);
+insert into activity_participant (activity_id, participant_id) values (1, 201);
+insert into activity_participant (activity_id, participant_id) values (51, 1);
+insert into activity_participant (activity_id, participant_id) values (51, 51);
+insert into activity_participant (activity_id, participant_id) values (101, 1);
+insert into activity_participant (activity_id, participant_id) values (101, 251);
+insert into activity_participant (activity_id, participant_id) values (101, 351);
+insert into activity_participant (activity_id, participant_id) values (101, 451);
+insert into activity_participant (activity_id, participant_id) values (101, 151);
+insert into activity_participant (activity_id, participant_id) values (151, 451);
+insert into activity_participant (activity_id, participant_id) values (151, 151);
+insert into activity_participant (activity_id, participant_id) values (151, 301);
+insert into activity_participant (activity_id, participant_id) values (151, 101);
+insert into activity_participant (activity_id, participant_id) values (151, 201);
+insert into activity_participant (activity_id, participant_id) values (151, 1);
+insert into activity_participant (activity_id, participant_id) values (201, 1);
+insert into activity_participant (activity_id, participant_id) values (201, 101);
+insert into activity_participant (activity_id, participant_id) values (201, 151);
+insert into activity_participant (activity_id, participant_id) values (201, 301);
+insert into activity_participant (activity_id, participant_id) values (251, 1);
+insert into activity_participant (activity_id, participant_id) values (251, 51);
+insert into activity_participant (activity_id, participant_id) values (301, 1);
+insert into activity_participant (activity_id, participant_id) values (301, 251);
+insert into activity_participant (activity_id, participant_id) values (301, 101);
+insert into activity_participant (activity_id, participant_id) values (301, 451);
+insert into activity_participant (activity_id, participant_id) values (301, 151);
+insert into activity_participant (activity_id, participant_id) values (401, 451);
+insert into activity_participant (activity_id, participant_id) values (401, 151);
+insert into activity_participant (activity_id, participant_id) values (401, 301);
+insert into activity_participant (activity_id, participant_id) values (401, 101);
+insert into activity_participant (activity_id, participant_id) values (401, 251);
+insert into activity_participant (activity_id, participant_id) values (401, 1);
+
+--payment
+
+insert into payment (activity_id, participant_id, amount) values (1, 1, 200);
+insert into payment (activity_id, participant_id, amount) values (1, 51, 200);
+insert into payment (activity_id, participant_id, amount) values (1, 151, 200);
+insert into payment (activity_id, participant_id, amount) values (1, 201, 200);
+insert into payment (activity_id, participant_id, amount) values (51, 1, 100);
+insert into payment (activity_id, participant_id, amount) values (51, 51, 100);
+insert into payment (activity_id, participant_id, amount) values (101, 1, 100);
+insert into payment (activity_id, participant_id, amount) values (101, 251, 100);
+insert into payment (activity_id, participant_id, amount) values (101, 351, 100);
+insert into payment (activity_id, participant_id, amount) values (101, 451, 100);
+insert into payment (activity_id, participant_id, amount) values (101, 151, 100);
+insert into payment (activity_id, participant_id, amount) values (151, 451, 50);
+insert into payment (activity_id, participant_id, amount) values (151, 151, 50);
+insert into payment (activity_id, participant_id, amount) values (151, 301, 50);
+insert into payment (activity_id, participant_id, amount) values (151, 101, 50);
+insert into payment (activity_id, participant_id, amount) values (151, 201, 50);
+insert into payment (activity_id, participant_id, amount) values (151, 1, 50);
+insert into payment (activity_id, participant_id, amount) values (201, 1, 50);
+insert into payment (activity_id, participant_id, amount) values (201, 101, 50);
+insert into payment (activity_id, participant_id, amount) values (201, 151, 50);
+insert into payment (activity_id, participant_id, amount) values (201, 301, 50);
+insert into payment (activity_id, participant_id, amount) values (251, 1, 100);
+insert into payment (activity_id, participant_id, amount) values (251, 51, 100);
+insert into payment (activity_id, participant_id, amount) values (301, 1, 50);
+insert into payment (activity_id, participant_id, amount) values (301, 251, 50);
+insert into payment (activity_id, participant_id, amount) values (301, 101, 50);
+insert into payment (activity_id, participant_id, amount) values (301, 451, 50);
+insert into payment (activity_id, participant_id, amount) values (301, 151, 50);
+insert into payment (activity_id, participant_id, amount) values (401, 451, 200);
+insert into payment (activity_id, participant_id, amount) values (401, 151, 200);
+insert into payment (activity_id, participant_id, amount) values (401, 301, 200);
+insert into payment (activity_id, participant_id, amount) values (401, 101, 200);
+insert into payment (activity_id, participant_id, amount) values (401, 251, 200);
+insert into payment (activity_id, participant_id, amount) values (401, 1, 200);
