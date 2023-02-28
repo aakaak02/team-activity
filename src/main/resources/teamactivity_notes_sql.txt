@@ -141,8 +141,6 @@ insert into activity_participant (activity_id, participant_id) values (401, 251)
 insert into activity_participant (activity_id, participant_id) values (401, 1);
 
 PAYMENT
-ALTER TABLE public.payment ADD id int8 NOT NULL DEFAULT nextval('payment_seq'::regclass);
-
 -- public.payment definition
 
 -- Drop table
@@ -150,7 +148,7 @@ ALTER TABLE public.payment ADD id int8 NOT NULL DEFAULT nextval('payment_seq'::r
 -- DROP TABLE public.payment;
 
 CREATE TABLE public.payment (
-	id int8 NOT NULL,
+	id int8 NOT NULL DEFAULT nextval('payment_seq'::regclass),
 	amount float8 NULL,
 	activity_id int8 NULL,
 	participant_id int8 NULL,
