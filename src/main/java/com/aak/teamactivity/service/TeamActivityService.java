@@ -5,4 +5,5 @@ import java.util.List;
 public interface TeamActivityService {
 
       List<String> geActivityNames();
+      List<String> getParticipantNames();
 }

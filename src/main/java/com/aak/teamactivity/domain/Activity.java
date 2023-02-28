@@ -32,8 +32,9 @@ public class Activity {
       inverseJoinColumns = @JoinColumn(name = "participant_id"))
   private List<Participant> participants=new ArrayList<>();
 
-  public void addParticipants(Participant participant){
+ /*
+ public void addParticipants(Participant participant){
       this.participants.add(participant);
   }
-
+*/
 }
