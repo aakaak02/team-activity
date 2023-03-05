@@ -22,4 +22,12 @@ public interface TeamActivityService {
       public Participant updateParticipant(Participant participant);
 
       public Participant addParticipant(Participant participant);
+
+      public void deleteParticipant(Participant participant);
+
+      public Activity updateActivity(Activity activity);
+
+      public Activity addActivity(Activity activity);
+
+      public void deleteActivity(Activity activity);
 }

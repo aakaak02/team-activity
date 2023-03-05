@@ -47,4 +47,24 @@ public class TeamActivityController {
         return ResponseEntity.ok(activities);
     }
 
+
+    //http://localhost:8081/teamactivity/api/addactivity
+    @PostMapping("/addactivity")
+    public ResponseEntity<Activity> addActivity(@RequestBody Activity activity) {
+        return ResponseEntity.ok(teamActivityService.addActivity(activity));
+    }
+
+    //http://localhost:8081/teamactivity/api/updateactivity
+    @PutMapping(("/updateactivity"))
+    public ResponseEntity<Activity> updateActivity(@RequestBody Activity activity) {
+        return ResponseEntity.ok(teamActivityService.updateActivity(activity));
+    }
+
+    //http://localhost:8081/teamactivity/api/deleteactivity
+    @DeleteMapping(("/deleteactivity"))
+    public void deleteActivity(@RequestBody Activity activity) {
+        teamActivityService.deleteActivity(activity);
+    }
+
+
 }

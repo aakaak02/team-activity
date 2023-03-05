@@ -42,8 +42,14 @@ public class ParticipantController {
 
     //http://localhost:8081/teamactivity/api/updateparticipant
     @PutMapping(("/updateparticipant"))
-    public ResponseEntity<Participant> updateContact(@RequestBody Participant participant) {
+    public ResponseEntity<Participant> updateParticipant(@RequestBody Participant participant) {
         return ResponseEntity.ok(teamActivityService.updateParticipant(participant));
+    }
+
+    //http://localhost:8081/teamactivity/api/deleteparticipant
+    @DeleteMapping(("/deleteparticipant"))
+    public void deleteParticipant(@RequestBody Participant participant) {
+         teamActivityService.deleteParticipant(participant);
     }
 
 }

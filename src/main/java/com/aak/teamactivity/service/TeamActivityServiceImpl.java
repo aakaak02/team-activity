@@ -72,4 +72,24 @@ public class TeamActivityServiceImpl implements TeamActivityService {
     public Participant addParticipant(Participant participant) {
         return participantRepo.save(participant);
     }
+
+    @Override
+    public void deleteParticipant(Participant participant) {
+      participantRepo.delete(participant);
+    }
+
+    @Override
+    public Activity updateActivity(Activity activity) {
+        return activityRepo.save(activity);
+    }
+
+    @Override
+    public Activity addActivity(Activity activity) {
+        return activityRepo.save(activity);
+    }
+
+    @Override
+    public void deleteActivity(Activity activity) {
+        activityRepo.delete(activity);
+    }
 }
