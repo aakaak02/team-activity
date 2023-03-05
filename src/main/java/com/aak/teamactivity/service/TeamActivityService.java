@@ -18,4 +18,8 @@ public interface TeamActivityService {
       public List<Activity> getActivitiesByParticipantsId(Long id);
 
       public List<Participant> getParticipantsByActivitiesId(Long id);
+
+      public Participant updateParticipant(Participant participant);
+
+      public Participant addParticipant(Participant participant);
 }

@@ -5,10 +5,7 @@ import com.aak.teamactivity.domain.Participant;
 import com.aak.teamactivity.service.TeamActivityService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
@@ -35,6 +32,18 @@ public class ParticipantController {
     public ResponseEntity<List<Participant>> getParticipantsByActivitiesId(@RequestParam("id") Long id){
         List<Participant> participants = teamActivityService.getParticipantsByActivitiesId(id);
         return ResponseEntity.ok(participants);
+    }
+
+    //http://localhost:8081/teamactivity/api/addparticipant
+    @PostMapping("/addparticipant")
+    public ResponseEntity<Participant> addParticipant(@RequestBody Participant participant) {
+        return ResponseEntity.ok(teamActivityService.addParticipant(participant));
+    }
+
+    //http://localhost:8081/teamactivity/api/updateparticipant
+    @PutMapping(("/updateparticipant"))
+    public ResponseEntity<Participant> updateContact(@RequestBody Participant participant) {
+        return ResponseEntity.ok(teamActivityService.updateParticipant(participant));
     }
 
 }

@@ -5,6 +5,7 @@ import com.aak.teamactivity.repo.ActivityRepo;
 import com.aak.teamactivity.repo.ParticipantRepo;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.cache.annotation.CachePut;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -59,5 +60,16 @@ public class TeamActivityServiceImpl implements TeamActivityService {
         List <Participant> participants = participantRepo.findParticipantsByActivitiesId(id);
         log.info("participants size is :{}",participants.size());
         return participants;
+    }
+
+    @Override
+    @CachePut(value = "participant", key = "#participant.id")
+    public Participant updateParticipant(Participant participant) {
+        return participantRepo.save(participant);
+    }
+
+    @Override
+    public Participant addParticipant(Participant participant) {
+        return participantRepo.save(participant);
     }
 }
