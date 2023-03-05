@@ -1,6 +1,5 @@
 package com.aak.teamactivity.web;
 
-import com.aak.teamactivity.domain.Activity;
 import com.aak.teamactivity.domain.Participant;
 import com.aak.teamactivity.service.TeamActivityService;
 import lombok.RequiredArgsConstructor;

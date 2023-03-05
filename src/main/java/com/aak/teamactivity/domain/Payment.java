@@ -3,9 +3,6 @@ package com.aak.teamactivity.domain;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
-import com.aak.teamactivity.domain.Participant;
-
-import java.util.List;
 
 @Entity
 @Table(name = "payment")
