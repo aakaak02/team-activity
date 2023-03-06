@@ -1,12 +1,14 @@
 package com.aak.teamactivity.service;
 import com.aak.teamactivity.domain.Activity;
 import com.aak.teamactivity.domain.Participant;
+import com.aak.teamactivity.exception.ActivityNotFoundException;
 import com.aak.teamactivity.repo.ActivityRepo;
 import com.aak.teamactivity.repo.ParticipantRepo;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.cache.annotation.CachePut;
 import org.springframework.stereotype.Service;
+import org.springframework.util.Assert;
 
 import java.util.List;
 import java.util.Optional;
@@ -33,11 +35,11 @@ public class TeamActivityServiceImpl implements TeamActivityService {
   }
 
  @Override
- public Optional<Activity> geActivityById(Long id){
-   log.info("id in service impl is :{}",id);
+ public Activity geActivityById(Long id){
+   Assert.notNull(id,"Activity id can't be null");
+   log.info("Looking for activity with id :{}",id);
    Optional<Activity> activity =  activityRepo.findById(id);
-   log.info("activity is :{}",activity.toString());
-   return activity;
+   return Optional.ofNullable(activity).get().orElseThrow(()->new ActivityNotFoundException("Activity not found for the given id "+id,"ACTIVITY_NOT_FOUND"));
  }
 
  @Override

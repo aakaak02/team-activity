@@ -19,6 +19,7 @@ public class Activity {
   private Long id;
   private String title;
   private String clubName;
+  @Enumerated(EnumType.STRING)
   private ActivityType activityType;
   private LocalDate date;
   private LocalTime startTime;
@@ -32,9 +33,6 @@ public class Activity {
       inverseJoinColumns = @JoinColumn(name = "participant_id"))
   private List<Participant> participants=new ArrayList<>();
 
- /*
- public void addParticipants(Participant participant){
-      this.participants.add(participant);
-  }
-*/
+
+
 }

@@ -5,6 +5,7 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -31,6 +32,14 @@ public class Participant {
   above is needed to avoid
   Spring Boot : Error :Cannot call sendError() after the response has been committed
   */
-  private List<Activity> activities;
+  private List<Activity> activities = new ArrayList<>();
 
+  public void addActivities(Activity activity){
+    this.activities.add(activity);
+    activity.getParticipants().add(this);
+  }
+  public void removeActivities(Activity activity){
+    this.getActivities().remove(activity);
+    activity.getParticipants().remove(this);
+  }
 }

@@ -10,61 +10,50 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/api/activity")
 @RequiredArgsConstructor
 public class TeamActivityController {
 
-    private final TeamActivityService teamActivityService;
+  private final TeamActivityService teamActivityService;
 
-    //test url: http://localhost:8081/teamactivity/api/activity/
-    @GetMapping("/activity")
-    public ResponseEntity<Optional<Activity>> geActivityById(@RequestParam("id") Long id){
-        System.out.println("id from request param is "+id);
-        Optional<Activity> activity = teamActivityService.geActivityById(id);
-        return ResponseEntity.ok(activity);
-    }
+  @GetMapping("/{id}")
+  public ResponseEntity<Activity> geActivityById(@PathVariable("id") Long id) {
+    Activity activity = teamActivityService.geActivityById(id);
+    return ResponseEntity.ok(activity);
+  }
 
-    //test url: http://localhost:8081/teamactivity/api/activity-names
-    @GetMapping("/activity-names")
-    public ResponseEntity<List<String>> geActivityNames(){
-      List<String> activityNames = teamActivityService.geActivityNames();
-      return ResponseEntity.ok(activityNames);
-    }
+  @GetMapping("/activity-names")
+  public ResponseEntity<List<String>> geActivityNames() {
+    List<String> activityNames = teamActivityService.geActivityNames();
+    return ResponseEntity.ok(activityNames);
+  }
 
-    //test url: http://localhost:8081/teamactivity/api/participant-names
-    @GetMapping("/participant-names")
-    public ResponseEntity<List<String>> getParticipantNames(){
-        List<String> participantNames = teamActivityService.getParticipantNames();
-        return ResponseEntity.ok(participantNames);
-    }
+  @GetMapping("/participant-names")
+  public ResponseEntity<List<String>> getParticipantNames() {
+    List<String> participantNames = teamActivityService.getParticipantNames();
+    return ResponseEntity.ok(participantNames);
+  }
 
-    //test url: http://localhost:8081/teamactivity/api/activitiesbyparticipant
-    //http://localhost:8081/teamactivity/api/activitiesbyparticipant?id=101
+  @GetMapping("/activitiesbyparticipant")
+  public ResponseEntity<List<Activity>> getActivitiesByParticipantId(@RequestParam("id") Long id) {
+    List<Activity> activities = teamActivityService.getActivitiesByParticipantsId(id);
+    return ResponseEntity.ok(activities);
+  }
 
-    @GetMapping("/activitiesbyparticipant")
-    public ResponseEntity<List<Activity>> getActivitiesByParticipantId(@RequestParam("id") Long id){
-        List<Activity> activities = teamActivityService.getActivitiesByParticipantsId(id);
-        return ResponseEntity.ok(activities);
-    }
+  @PostMapping("/addactivity")
+  public ResponseEntity<Activity> addActivity(@RequestBody Activity activity) {
+    return ResponseEntity.ok(teamActivityService.addActivity(activity));
+  }
 
+  @PutMapping(("/updateactivity"))
+  public ResponseEntity<Activity> updateActivity(@RequestBody Activity activity) {
+    return ResponseEntity.ok(teamActivityService.updateActivity(activity));
+  }
 
-    //http://localhost:8081/teamactivity/api/addactivity
-    @PostMapping("/addactivity")
-    public ResponseEntity<Activity> addActivity(@RequestBody Activity activity) {
-        return ResponseEntity.ok(teamActivityService.addActivity(activity));
-    }
-
-    //http://localhost:8081/teamactivity/api/updateactivity
-    @PutMapping(("/updateactivity"))
-    public ResponseEntity<Activity> updateActivity(@RequestBody Activity activity) {
-        return ResponseEntity.ok(teamActivityService.updateActivity(activity));
-    }
-
-    //http://localhost:8081/teamactivity/api/deleteactivity
-    @DeleteMapping(("/deleteactivity"))
-    public void deleteActivity(@RequestBody Activity activity) {
-        teamActivityService.deleteActivity(activity);
-    }
+  @DeleteMapping(("/deleteactivity"))
+  public void deleteActivity(@RequestBody Activity activity) {
+    teamActivityService.deleteActivity(activity);
+  }
 
 
 }

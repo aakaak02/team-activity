@@ -11,7 +11,7 @@ public interface TeamActivityService {
       List<String> geActivityNames();
       List<String> getParticipantNames();
 
-      public Optional<Activity> geActivityById(Long id);
+      Activity geActivityById(Long id);
 
       public Optional<Participant> getParticipantById(Long id);
 

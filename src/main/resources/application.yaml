@@ -1,15 +1,14 @@
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/iplstatdb
+    url: jdbc:postgresql://localhost:5432/sample
     password: dbuser
     username: dbuser
-
   jpa:
     show-sql: true
     hibernate:
-      ddl-auto: create
+      ddl-auto: update
     generate-ddl: true
 server:
   servlet:
-    context-path: /teamactivity
+    context-path: /funtm
   port: 8081
